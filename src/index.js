@@ -23,8 +23,9 @@ app.get('/products', (req,res) => {
 })
 
 app.put('/products/:id', (req, res) => {
-    if(products.some(product => product.id === req.params.id)){
-        const index = products.findIndex( product => product.id === req.params.id )
+    const { id } = req.params;
+    if(products.some(product => product.id === id)){
+        const index = products.findIndex( product => product.id === id )
         const { author, title, price } = req.body
         const item = {
             id: req.params.id,
@@ -40,8 +41,9 @@ app.put('/products/:id', (req, res) => {
 });
 
 app.delete('/products/:id', (req, res) => {
-    if(products.some(product => product.id === req.params.id)){
-        const index = products.findIndex( product => product.id === req.params.id )
+    const { id } = req.params;
+    if(products.some(product => product.id === id)){
+        const index = products.findIndex( product => product.id === id)
         products.splice(index, 1)
         return res.send('Produto deletado com sucesso!');    
     } else {
