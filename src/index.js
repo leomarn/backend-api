@@ -1,12 +1,21 @@
-const express = require('express');
+import express from 'express';
+import { v4 as uuidv4 } from 'uuid';
 const app = express();
 app.use(express.json());
 
 const products = [];
 
 app.post('/products', (req, res) => {
-    products.push(req.body);
-    return res.send('Produto Cadastrado!');
+    const id = uuidv4();
+    const { author, title, price } = req.body
+    const item = {
+        id,
+        author,
+        title,
+        price
+    };
+    products.push(item);
+    return res.send(item);
 });
 
 app.get('/products', (req,res) => {
@@ -14,13 +23,30 @@ app.get('/products', (req,res) => {
 })
 
 app.put('/products/:id', (req, res) => {
-    products[req.params.id] = req.body
-    return res.send('Produto Atualizado');
+    if(products.some(product => product.id === req.params.id)){
+        const index = products.findIndex( product => product.id === req.params.id )
+        const { author, title, price } = req.body
+        const item = {
+            id: req.params.id,
+            author,
+            title,
+            price
+        };
+        products[index] = item;
+        return res.send(products[index]);    
+    } else {
+        return res.send('Produto não encontrado!');  
+    }
 });
 
 app.delete('/products/:id', (req, res) => {
-    products.splice(req.params.id,1);
-    return res.send('Produto Deletado');
+    if(products.some(product => product.id === req.params.id)){
+        const index = products.findIndex( product => product.id === req.params.id )
+        products.splice(index, 1)
+        return res.send('Produto deletado com sucesso!');    
+    } else {
+        return res.send('Produto não encontrado!');  
+    }
 });
 
 app.listen(3000, () => {
