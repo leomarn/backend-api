@@ -1,27 +1,26 @@
 [
 	{
-		"nome": "Adrew Jamies",
-		"email": "andrew@jamies.com",
-		"phone": "Ps - ST, 267"
+		"id": "1",
+		"author": "João Eriberto Mota Filho",
+		"title": "Análise de Tráfego em Redes TCP/IP: Utilize Tcpdump na Análise de Tráfegos em Qualquer Sistema Operacional",
+		"price": "R$ 50,60"
 	},
 	{
-		"nome": "Phelip Sabins",
-		"email": "phelip@sabins.com",
-		"phone": "Ps - WE, 561"
+		"id": "2",
+		"author": "Ryan Benedetti",
+		"title": "Use A Cabeça! Redes De Computadores ",
+		"price": "R$ 95,99"
 	},
 	{
-		"nome": "Robert Alhaus",
-		"email": "robert@alhaus.com",
-		"phone": "Ps - SW, 667"
+		"id": "3",
+		"author": "Andrew Tanenbaum",
+		"title": "Redes de Computadores",
+		"price": "R$ 212,29"
 	},
 	{
-		"nome": "Safira Romeu",
-		"email": "safira@romeu.com",
-		"phone": "Ps - AQ, 332"
-	},
-	{
-		"nome": "Alice Rins",
-		"email": "alice@rins.com",
-		"phone": "Ps - VG, 880"
+		"id": "4",
+		"author": "James F. Kurose",
+		"title": "Redes de computadores e a Internet",
+		"price": "R$ 192,09"
 	}
 ]
