@@ -3,6 +3,7 @@ const app = express();
 app.use(express.json());
 
 const products = [];
+
 app.post('/products', (req, res) => {
     products.push(req.body);
     return res.send('Produto Cadastrado!');
