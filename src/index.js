@@ -28,7 +28,7 @@ app.put('/products/:id', (req, res) => {
         const index = products.findIndex( product => product.id === id )
         const { author, title, price } = req.body
         const item = {
-            id: req.params.id,
+            id,
             author,
             title,
             price
@@ -36,7 +36,7 @@ app.put('/products/:id', (req, res) => {
         products[index] = item;
         return res.send(products[index]);    
     } else {
-        return res.send('Produto não encontrado!');  
+        return res.status(400).send('Produto não encontrado!');  
     }
 });
 
@@ -47,7 +47,7 @@ app.delete('/products/:id', (req, res) => {
         products.splice(index, 1)
         return res.send('Produto deletado com sucesso!');    
     } else {
-        return res.send('Produto não encontrado!');  
+        return res.status(400).send('Produto não encontrado!');    
     }
 });
 
