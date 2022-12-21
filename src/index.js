@@ -19,7 +19,11 @@ app.post('/products', (req, res) => {
 });
 
 app.get('/products', (req,res) => {
-    return res.send(products);
+    const { id } = req.query
+    const product = id
+        ? products.filter( product => product.id.includes(id))
+        : products;
+    return res.send(product);
 })
 
 app.put('/products/:id', (req, res) => {
