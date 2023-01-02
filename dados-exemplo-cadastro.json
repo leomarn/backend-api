@@ -1,0 +1,22 @@
+[
+  {
+    "author": "João Eriberto Mota Filho",
+    "title": "Análise de Tráfego em Redes TCP/IP: Utilize Tcpdump na Análise de Tráfegos em Qualquer Sistema Operacional",
+    "price": "R$ 50,60"
+  },
+  {
+    "author": "Ryan Benedetti",
+    "title": "Use A Cabeça! Redes De Computadores ",
+    "price": "R$ 95,99"
+  },
+  {
+    "author": "Andrew Tanenbaum",
+    "title": "Redes de Computadores",
+    "price": "R$ 212,29"
+  },
+  {
+    "author": "James F. Kurose",
+    "title": "Redes de computadores e a Internet",
+    "price": "R$ 192,09"
+  }
+]
