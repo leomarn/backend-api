@@ -54,4 +54,4 @@ app.delete('/products/:id', (req, res) => {
   return res.status(400).send('Produto não encontrado!');
 });
 
-app.listen(3000);
+app.listen(3000, () => console.log('server on'));
